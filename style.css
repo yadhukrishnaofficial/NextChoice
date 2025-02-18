@@ -1,326 +1,153 @@
+/* Base responsive settings */
 * {
-    font-family: "Lato", serif;
-    font-weight: 700;
-    padding: 5px;
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-/* Navigation Bar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: white;
-    flex-wrap: wrap;
-}
-
-.logo {
-    font-size: 28px;
-    color: #392363;
-}
-
-.menu {
-    display: flex;
-    gap: 25px;
-}
-
-.menu a {
-    color: #392363;
-    text-decoration: none;
-}
-
-/* Responsive Nav */
-@media (max-width: 768px) {
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    /* Navigation adjustments */
     nav {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 15px 20px;
     }
+    
+    .logo {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
     .menu {
         flex-direction: column;
         gap: 15px;
+        width: 100%;
+        text-align: center;
     }
-}
-
-/* Hero Section */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    background: linear-gradient(45deg, #ffffffd2, #fff8ee);
-    flex-wrap: wrap;
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 20px;
-}
-
-.content {
-    max-width: 50%;
-}
-
-.hero-content h1 {
-    font-size: 42px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.whatsapp-btn,
-.course-btn {
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-@media (max-width: 768px) {
+    
+    /* Hero section adjustments */
     .hero {
         flex-direction: column;
-        text-align: center;
+        padding: 30px 20px;
     }
+    
     .hero-image {
-        width: 80%;
-        margin-top: 20px;
+        width: 90%;
+        margin: 20px auto;
     }
+    
     .content {
         max-width: 100%;
-    }
-}
-
-/* Mission, Vision & Why Choose Us */
-.Mission, .vision, .whychooseus {
-    text-align: center;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-/* Cards & Grids */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* Images Section */
-.img-container {
-    display: flex;
-    flex-wrap: wrap;
-    background: linear-gradient(45deg, #ffffffd2, #fff8ee);
-    padding: 20px;
-    gap: 20px;
-}
-
-.left, .right {
-    width: 100%;
-}
-
-.left h1 {
-    text-align: center;
-    color: #392363;
-}
-
-.img1, .img2 {
-    border-radius: 20px;
-    width: 100%;
-    max-width: 350px;
-    margin: auto;
-}
-
-@media (min-width: 768px) {
-    .img-container {
-        flex-wrap: nowrap;
-    }
-    .left {
-        width: 60%;
-    }
-    .right {
-        width: 40%;
-    }
-}
-
-/* Footer */
-footer {
-    border: 1px solid #444;
-    padding: 20px;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.footer-container div {
-    flex: 1;
-    padding: 10px;
-    min-width: 250px;
-}
-
-footer a {
-    text-decoration: none;
-    color: #000;
-}
-
-footer a:hover {
-    color: #392363;
-}
-
-footer h1, footer h3 {
-    color: #392363;
-}
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
+        margin-top: 30px;
         text-align: center;
     }
-}
-
-/* Founders Section */
-.founders-section {
-    text-align: center;
-    padding: 50px;
-    background: linear-gradient(45deg, #ffffffd2, #fff8ee);
-}
-
-.founders-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.founder-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.founder-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* Contact Form */
-.contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    background: linear-gradient(45deg, #ffffffd2, #fff8ee);
-    border-radius: 10px;
-}
-
-.contact-form {
-    text-align: center;
-    border: 1px solid #392363;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-}
-
-input, button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #392363;
-    background: linear-gradient(45deg, #ffffffd2, #fff8ee);
-}
-
-button {
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    /* Mission, Vision, Why Choose Us sections */
+    .Mission, .vision, .whychooseus {
+        padding: 20px;
+    }
+    
+    /* Card grid adjustments */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Image container adjustments */
+    .img-container {
+        flex-direction: column;
+    }
+    
+    .left, .right {
+        width: 100%;
+    }
+    
+    .img1, .img2 {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+    }
+    
+    /* Footer adjustments */
+    .footer-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .footer-container > div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* About page adjustments */
+    .abtwhychooseus, .aboutus {
+        flex-direction: column;
+    }
+    
+    .founders-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Service page adjustments */
+    .service-details {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    /* Contact page adjustments */
     .contact-container {
         flex-direction: column;
-        align-items: center;
+    }
+    
+    .contact-form {
+        width: 90%;
+    }
+    
+    /* Button styles for mobile */
+    .whatsapp-btn, .course-btn, button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px 20px;
+        text-align: center;
+        background-color: #392363;
+        color: white;
+        justify-content: center;
+    }
+    
+    .course-btn {
+        border: 1px solid #392363;
+    }
+    
+    .coursebtn {
+        width: 100%;
+        height: auto;
+        background-color: #392363;
+        color: white;
     }
 }
 
-/* Dropdown Menu */
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.show {
-    display: block;
+/* Additional responsive tweaks for very small screens */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .founder-card {
+        padding: 15px;
+    }
+    
+    .founder-img {
+        height: 150px;
+    }
 }
